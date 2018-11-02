@@ -3,19 +3,41 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="300" alt="Logo" src="../images/bull-dog.jpg">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div id="about">
+  <h2>About</h2>
+  <p>We tear down barns in mid Missouri. It's really great...</p>
+</div>
+
+<div id="contact-info">
+  <h2>Contact Info</h2>
+  <ul id=contact-details>
+    <li>Barn Lord</li>
+    <li>(XXX)-XXX-XXXX</li>
+    <li>email@email.com</li>
+  </ul>
+</div>
+
+<div id="wood">
+  <h2>Wood</h2>
+  <img class="nav-arrow" (click)="leftWood()" src="../images/left-arrow.svg">
+  <img [hidden]="IsHidden(1)" width="300" alt="Wood" src="../images/wood.jpg">
+  <img [hidden]="IsHidden(2)" width="300" alt="Wood" src="../images/wood1.jpg">
+  <img [hidden]="IsHidden(3)" width="300" alt="Wood" src="../images/wood2.jpg">
+  <img [hidden]="IsHidden(4)" width="300" alt="Wood" src="../images/wood4.jpg">
+  <img class="nav-arrow" (click)="rightWood()" src="../images/right-arrow.svg">
+</div>
+
+<div id="furniture">
+  <h2>Furniture</h2>
+  <img width="300" alt="Table" src="../images/table.jpg">
+</div>
+
+<div id="tin">
+  <h2>Tin</h2>
+  <img width="300" alt="Tin" src="../images/tin.jpg">
+</div>
 
 <router-outlet></router-outlet>
