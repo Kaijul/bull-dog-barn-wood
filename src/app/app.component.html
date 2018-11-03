@@ -8,34 +8,40 @@
 
 <div id="about">
   <h2>About</h2>
-  <p>We tear down barns in mid Missouri. It's really great...</p>
+  <p>
+    We tear down barns in mid Missouri. It's really great...
+    We have wood, tin, and furniture made by 9th degree master carpenter Gerald Miner.
+  </p>
 </div>
 
 <div id="contact-info">
   <h2>Contact Info</h2>
-  <ul id=contact-details>
-    <li>Barn Lord</li>
-    <li>(XXX)-XXX-XXXX</li>
-    <li>email@email.com</li>
-  </ul>
+  <div id=contact-details>
+    <ul>
+      <li>David Miner</li>
+      <li>(660)-384-1301</li>
+      <li>dsminer@hotmail.com</li>
+    </ul>
+  </div>
 </div>
 
-<div id="wood">
+<div id="wood" class="pictures">
   <h2>Wood</h2>
-  <img class="nav-arrow" (click)="leftWood()" src="../images/left-arrow.svg">
-  <img [hidden]="IsHidden(1)" width="300" alt="Wood" src="../images/wood.jpg">
-  <img [hidden]="IsHidden(2)" width="300" alt="Wood" src="../images/wood1.jpg">
-  <img [hidden]="IsHidden(3)" width="300" alt="Wood" src="../images/wood2.jpg">
-  <img [hidden]="IsHidden(4)" width="300" alt="Wood" src="../images/wood4.jpg">
-  <img class="nav-arrow" (click)="rightWood()" src="../images/right-arrow.svg">
+  <img class="nav-arrow" [hidden]="!HasPicturesLeft()" (click)="leftWood()" src="../images/left-arrow.svg">
+  <img class="picture" [hidden]="IsHidden(1)" width="300" alt="Wood" src="../images/wood.jpg">
+  <img class="picture" [hidden]="IsHidden(2)" width="300" alt="Wood" src="../images/wood1.jpg">
+  <img class="picture" [hidden]="IsHidden(3)" width="300" alt="Wood" src="../images/wood2.jpg">
+  <img class="picture" [hidden]="IsHidden(4)" width="300" alt="Wood" src="../images/wood3.jpg">
+  <img class="picture" [hidden]="IsHidden(5)" width="300" alt="Wood" src="../images/wood4.jpg">
+  <img class="nav-arrow" [hidden]="!HasPicturesRight()" (click)="rightWood()" src="../images/right-arrow.svg">
 </div>
 
-<div id="furniture">
+<div id="furniture" class="pictures">
   <h2>Furniture</h2>
   <img width="300" alt="Table" src="../images/table.jpg">
 </div>
 
-<div id="tin">
+<div id="tin" class="pictures">
   <h2>Tin</h2>
   <img width="300" alt="Tin" src="../images/tin.jpg">
 </div>

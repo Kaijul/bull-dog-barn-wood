@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  private visibleWood: number[] = [1, 2, 3];
+  private visibleWood: number[] = [1];
 
   title = 'Bull Dog Barn Wood';
 
@@ -25,18 +25,26 @@ export class AppComponent {
     var second = first + 1;
     var last = first + 2;
 
-    this.visibleWood = [first, second, last];
+    this.visibleWood = [first];
   }
 
   rightWood() {
     var last = this.visibleWood[this.visibleWood.length - 1];
-    if (last === 4) {
+    if (last === 5) {
       return;
     }
 
     last++;
     var second = last - 1;
     var first = last - 2;
-    this.visibleWood = [first, second, last];
+    this.visibleWood = [last];
+  }
+
+  HasPicturesLeft() {
+    return this.visibleWood[0] > 1;
+  }
+
+  HasPicturesRight() {
+    return this.visibleWood[0] < 5;
   }
 }
