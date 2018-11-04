@@ -1,0 +1,17 @@
+<div id="tin" class="pictures">
+  <h2>Tin</h2>
+  <div class="picture-list">
+    <div [hidden]="IsHidden(visibleTin, 1)">
+      <div class="nav-arrow">
+        <img [hidden]="!HasPicturesLeft(visibleTin)" (click)="visibleTin = left(visibleTin)" src="../images/left-arrow.svg">
+      </div>
+      <img class="picture" alt="Wood" src="../images/tin.jpg">
+      <div class="nav-arrow">
+        <img [hidden]="!HasPicturesRight(visibleTin, 1)" (click)="visibleTin = right(visibleTin)" src="../images/right-arrow.svg">
+      </div>
+      <div>
+        <span>This is lovely tin.</span>
+      </div>
+    </div>
+  </div>
+</div>

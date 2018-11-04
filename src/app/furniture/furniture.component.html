@@ -1,0 +1,18 @@
+<div id="furniture" class="pictures">
+  <h2>Furniture</h2>
+
+  <div class="picture-list">
+    <div [hidden]="IsHidden(visibleFurniture, 1)">
+      <div class="nav-arrow">
+        <img [hidden]="!HasPicturesLeft(visibleFurniture)" (click)="visibleFurniture = left(visibleFurniture)" src="../images/left-arrow.svg">
+      </div>
+      <img class="picture" alt="Wood" src="../images/table.jpg">
+      <div class="nav-arrow">
+        <img [hidden]="!HasPicturesRight(visibleFurniture, 1)" (click)="visibleFurniture = right(visibleFurniture)" src="../images/right-arrow.svg">
+      </div>
+      <div>
+        <span>This is a lovely table.</span>
+      </div>
+    </div>
+  </div>
+</div>

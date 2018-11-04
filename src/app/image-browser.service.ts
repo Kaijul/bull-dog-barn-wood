@@ -1,19 +1,13 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
+export class ImageBrowser {
 
-  private visibleWood: number[] = [1];
-  private visibleFurniture: number[] = [1];
-  private visibleTin: number[] = [1];
+  constructor() { }
 
-  title = 'Bull Dog Barn Wood';
-
-  IsHidden(arr, num) {
+   IsHidden(arr, num) {
     return !arr.includes(num);
   }
 
@@ -45,4 +39,5 @@ export class AppComponent {
   HasPicturesRight(arr, count) {
     return arr[0] < count;
   }
+
 }
