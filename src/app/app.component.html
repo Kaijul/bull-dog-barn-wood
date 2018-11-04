@@ -27,23 +27,45 @@
 
 <div id="wood" class="pictures">
   <h2>Wood</h2>
-  <img class="nav-arrow" [hidden]="!HasPicturesLeft()" (click)="leftWood()" src="../images/left-arrow.svg">
-  <img class="picture" [hidden]="IsHidden(1)" width="300" alt="Wood" src="../images/wood.jpg">
-  <img class="picture" [hidden]="IsHidden(2)" width="300" alt="Wood" src="../images/wood1.jpg">
-  <img class="picture" [hidden]="IsHidden(3)" width="300" alt="Wood" src="../images/wood2.jpg">
-  <img class="picture" [hidden]="IsHidden(4)" width="300" alt="Wood" src="../images/wood3.jpg">
-  <img class="picture" [hidden]="IsHidden(5)" width="300" alt="Wood" src="../images/wood4.jpg">
-  <img class="nav-arrow" [hidden]="!HasPicturesRight()" (click)="rightWood()" src="../images/right-arrow.svg">
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesLeft(visibleWood)" (click)="visibleWood = left(visibleWood)" src="../images/left-arrow.svg">
+  </div>
+  <div class="picture-list">
+    <img class="picture" [hidden]="IsHidden(visibleWood, 1)" alt="Wood" src="../images/wood.jpg">
+    <img class="picture" [hidden]="IsHidden(visibleWood, 2)" alt="Wood" src="../images/wood1.jpg">
+    <img class="picture" [hidden]="IsHidden(visibleWood, 3)" alt="Wood" src="../images/wood2.jpg">
+    <img class="picture" [hidden]="IsHidden(visibleWood, 4)" alt="Wood" src="../images/wood3.jpg">
+    <img class="picture" [hidden]="IsHidden(visibleWood, 5)" alt="Wood" src="../images/wood4.jpg">
+  </div>
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesRight(visibleWood, 5)" (click)="visibleWood = right(visibleWood)" src="../images/right-arrow.svg">
+  </div>
 </div>
 
 <div id="furniture" class="pictures">
   <h2>Furniture</h2>
-  <img width="300" alt="Table" src="../images/table.jpg">
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesLeft(visibleFurniture)" (click)="visibleFurniture = left(visibleFurniture)" src="../images/left-arrow.svg">
+  </div>
+  <div class="picture-list">
+    <img class="picture" [hidden]="IsHidden(visibleFurniture, 1)" alt="Wood" src="../images/table.jpg">
+  </div>
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesRight(visibleFurniture, 1)" (click)="visibleFurniture = right(visibleFurniture)" src="../images/right-arrow.svg">
+  </div>
 </div>
 
 <div id="tin" class="pictures">
   <h2>Tin</h2>
-  <img width="300" alt="Tin" src="../images/tin.jpg">
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesLeft(visibleTin)" (click)="visibleTin = left(visibleTin)" src="../images/left-arrow.svg">
+  </div>
+  <div class="picture-list">
+    <img class="picture" [hidden]="IsHidden(visibleTin, 1)" alt="Wood" src="../images/tin.jpg">
+  </div>
+  <div class="nav-arrow">
+    <img [hidden]="!HasPicturesRight(visibleTin, 1)" (click)="visibleTin = right(visibleTin)" src="../images/right-arrow.svg">
+  </div>
 </div>
 
 <router-outlet></router-outlet>

@@ -8,43 +8,41 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   private visibleWood: number[] = [1];
+  private visibleFurniture: number[] = [1];
+  private visibleTin: number[] = [1];
 
   title = 'Bull Dog Barn Wood';
 
-  IsHidden(num) {
-    return !this.visibleWood.includes(num);
+  IsHidden(arr, num) {
+    return !arr.includes(num);
   }
 
-  leftWood() {
-    var first = this.visibleWood[0];
+  left(arr) {
+    var first = arr[0];
     if (first === 1) {
       return;
     }
 
     first--;
-    var second = first + 1;
-    var last = first + 2;
 
-    this.visibleWood = [first];
+    return [first];
   }
 
-  rightWood() {
-    var last = this.visibleWood[this.visibleWood.length - 1];
+  right(arr) {
+    var last = arr[arr.length - 1];
     if (last === 5) {
       return;
     }
 
     last++;
-    var second = last - 1;
-    var first = last - 2;
-    this.visibleWood = [last];
+    return [last];
   }
 
-  HasPicturesLeft() {
-    return this.visibleWood[0] > 1;
+  HasPicturesLeft(arr) {
+    return arr[0] > 1;
   }
 
-  HasPicturesRight() {
-    return this.visibleWood[0] < 5;
+  HasPicturesRight(arr, count) {
+    return arr[0] < count;
   }
 }
